@@ -63,7 +63,7 @@ namespace FairyGUI
 					throw new Exception( "Cant load font '" + name + "'" );
 			}
 
-			_font.textureRebuildCallback += textureRebuildCallback;
+			Font.textureRebuilt += textureRebuildCallback;
 			this.mainTexture = new NTexture( _font.material.mainTexture );
 		}
 
@@ -155,9 +155,9 @@ namespace FairyGUI
 			return null;
 		}
 
-		void textureRebuildCallback()
+		void textureRebuildCallback(Font font)
 		{
-			mainTexture = new NTexture( _font.material.mainTexture );
+			mainTexture = new NTexture( font.material.mainTexture );
 
 			if ( !_callingValidate )
 				Stage.inst.onPostUpdate.Add( ValidateTextFields );
