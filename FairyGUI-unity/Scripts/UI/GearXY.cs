@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using DG.Tweening;
-using FairyGUI.Utils;
+﻿using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FairyGUI
@@ -70,7 +69,7 @@ namespace FairyGUI
                     _tweener = DOTween.To(() => new Vector2(_owner.x, _owner.y), v =>
                     {
                         _owner._gearLocked = true;
-                        _owner.SetXY(v.x, v.y);
+                        _owner.SetXY(v.value.x, v.value.y);
                         _owner._gearLocked = false;
                     }, new Vector2(gv.x, gv.y), tweenTime)
                     .SetEase(easeType)

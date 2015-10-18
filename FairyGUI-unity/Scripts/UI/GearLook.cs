@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using DG.Tweening;
-using FairyGUI.Utils;
+﻿using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FairyGUI
@@ -80,9 +79,9 @@ namespace FairyGUI
                     {
                         _owner._gearLocked = true;
                         if (a)
-                            _owner.alpha = val.x;
+                            _owner.alpha = val.value.x;
                         if (b)
-                            _owner.rotation = val.y;
+                            _owner.rotation = val.value.y;
                         _owner._gearLocked = false;
                     }, new Vector2(gv.alpha, gv.rotation), tweenTime)
                     .SetEase(easeType)

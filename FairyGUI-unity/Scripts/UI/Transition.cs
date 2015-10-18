@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DG.Tweening;
 using FairyGUI.Utils;
-using DG.Tweening;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FairyGUI
@@ -374,8 +374,8 @@ namespace FairyGUI
                             item.tweener = DOTween.To(() => new Vector2(item.value.f1, item.value.f2),
                                 val =>
                                 {
-                                    item.value.f1 = val.x;
-                                    item.value.f2 = val.y;
+                                    item.value.f1 = val.value.x;
+                                    item.value.f2 = val.value.y;
                                 }, new Vector2(item.endValue.f1, item.endValue.f2), item.duration)
                                 .SetEase(item.easeType)
                                 .OnStart(() => { if (item.hook != null) item.hook(); })
@@ -473,8 +473,8 @@ namespace FairyGUI
             item.tweener = DOTween.To(() => new Vector2(item.value.f1, item.value.f2),
                         val =>
                         {
-                            item.value.f1 = val.x;
-                            item.value.f2 = val.y;
+                            item.value.f1 = val.value.x;
+                            item.value.f2 = val.value.y;
                         }, endValue, item.duration)
                     .SetEase(item.easeType)
                     .OnUpdate(() => { ApplyValue(item, item.value); })

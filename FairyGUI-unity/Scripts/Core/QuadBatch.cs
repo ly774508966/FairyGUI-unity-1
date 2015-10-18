@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace FairyGUI
 {
@@ -56,7 +57,7 @@ namespace FairyGUI
             _shader = ShaderConfig.imageShader;
             meshFilter = gameObject.AddComponent<MeshFilter>();
             meshRenderer = gameObject.AddComponent<MeshRenderer>();
-            meshRenderer.castShadows = false;
+            meshRenderer.shadowCastingMode = ShadowCastingMode.Off;
             meshRenderer.receiveShadows = false;
             mesh = new Mesh();
             mesh.hideFlags = HideFlags.DontSave;

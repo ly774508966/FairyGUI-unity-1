@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using DG.Tweening;
-using FairyGUI.Utils;
+﻿using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FairyGUI
@@ -86,9 +85,9 @@ namespace FairyGUI
                     {
                         _owner._gearLocked = true;
                         if (a)
-                            _owner.SetSize(v.x, v.y, _owner.gearXY.controller == _controller);
+                            _owner.SetSize(v.value.x, v.value.y, _owner.gearXY.controller == _controller);
                         if (b)
-                            _owner.SetScale(v.z, v.w);
+                            _owner.SetScale(v.value.z, v.value.w);
                         _owner._gearLocked = false;
                     }, new Vector4(gv.width, gv.height, gv.scaleX, gv.scaleY), tweenTime)
                     .SetEase(easeType)
